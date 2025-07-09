@@ -10,7 +10,7 @@ services:
     environment:
       - PORT=4001
       # Caso tenha variáveis de ambiente, adicione aqui
-      - DB_HOST=DATABASE_URL
+      - DB_HOST=host_do_banco
       - DB_USER=usuario
       - DB_PASS=senha
     volumes:
