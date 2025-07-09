@@ -1,4 +1,6 @@
-const knex = require('knex')(require('../../knexfile'));
+const config = require('../../knexfile');
+const environment = process.env.NODE_ENV || 'development';
+const knex = require('knex')(config[environment]);
 
 const findByEmail = (email) => knex('users').where({ email }).first();
 const findById = (id) => knex('users').where({ id }).first();
