@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  user-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4001:4001'
+    environment:
+      - PORT=4001
+      # Caso tenha variáveis de ambiente, adicione aqui
+      - DB_HOST=host_do_banco
+      - DB_USER=usuario
+      - DB_PASS=senha
+    volumes:
+      - ./:/app
+    command: npm run dev  # se quiser rodar com nodemon, ou substitua por node src/server.js
